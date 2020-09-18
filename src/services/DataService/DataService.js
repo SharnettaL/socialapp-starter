@@ -10,5 +10,8 @@ class DataService {
   RegisterUser(userData) {
     return this.client.post(this.url + "/users", userData);
   }
+  getMessages(limit = 10) {
+    return this.client.get(this.url + `/messages?limit=${limit}`);
+  }
 }
-export default DataService;
+export default new DataService();
